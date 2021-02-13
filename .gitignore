@@ -3,16 +3,16 @@
 /tmp/
 *.sublime-project
 *.sublime-workspace
-src/npm-debug.log
-src/sauce_connect.log*
+npm-debug.log
+sauce_connect.log*
 .idea
-src/node_modules
-src/handlebars-release.tgz
+node_modules
+handlebars-release.tgz
 .nyc_output
 
 # Generated files
 lib/handlebars/compiler/parser.js
-src/coverage/
-src/dist/
-src/integration-testing/*/dist/
-src/spec/tmp/*
+coverage/
+dist/
+integration-testing/*/dist/
+spec/tmp/*
