@@ -482,6 +482,14 @@ h2 {
   .top-logo {
     width: 80%;
   }
+
+  .teaser .teaser-box,
+  .teaser {
+    width: 100%;
+  }
+  .image-container {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -491,33 +499,20 @@ h2 {
   nav .nav-container {
     justify-content: center;
   }
-  .teaser .teaser-box,
-  .teaser {
-    width: 100%;
-  }
-  .image-container {
-    display: none;
-  }
 
   .top-logo {
     width: 80%;
   }
-}
 
-@media only screen and (max-width: 1280px) {
   .hide {
     display: none;
   }
   nav .nav-container {
     justify-content: center;
   }
-  .teaser .teaser-box,
-  .teaser {
-    width: 100%;
-  }
-  .image-container {
-    display: none;
-  }
+}
+
+@media only screen and (max-width: 1280px) {
   .top-column-left {
     width: 10%;
     padding-left: 2%;
