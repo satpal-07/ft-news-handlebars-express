@@ -1,3 +1,7 @@
 {{>header}}
 {{>main-search-bar}}
+{{#if isResultEmpty}}
+{{>no-result}}
+{{else}}
 {{>search-result}}
+{{/if}}

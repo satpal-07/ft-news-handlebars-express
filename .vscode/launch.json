@@ -11,11 +11,11 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/server.js",
-      "cwd": "${workspaceFolder}/src",
+      "program": "server.js",
+      "cwd": "${workspaceFolder}",
       "outputCapture": "std",
       "env": {
-        "NODE_ENV": "dummy"
+        "NODE_ENV": "dev"
       },
     }
   ]
