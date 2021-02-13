@@ -3,7 +3,7 @@
     "port": 5000,
     "serviceName": "Financial news"
   },
-  "apiConfig": {
+  "ftApiConfig": {
     "apiUrl": "https://api.ft.com/content/search/v1?",
     "apiKey": "",
     "aspects": ["editorial","images","lifecycle","location","summary","title"],

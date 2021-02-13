@@ -15,7 +15,8 @@
       "cwd": "${workspaceFolder}",
       "outputCapture": "std",
       "env": {
-        "NODE_ENV": "dev"
+        "NODE_ENV": "dev",
+        "API_KEY":""
       },
     }
   ]

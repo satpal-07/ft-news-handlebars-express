@@ -1,5 +1,5 @@
 'use strict';
-const apiConfig = require('config').apiConfig;
+const ftApiConfig = require('config').ftApiConfig;
 const { callAPI } = require('../api');
 const endpointName = '/search';
 const aspects = 'article';
@@ -17,22 +17,22 @@ const endpoint = async (req, res, next) => {
     console.debug(`search text: ${searchText}`);
     // set up the FT API params
     const headers = {
-      'X-Api-Key': apiConfig.apiKey,
+      'X-Api-Key': ftApiConfig.apiKey,
     };
     const body = {
       queryString: searchText,
       resultContext: {
-        aspects: apiConfig.aspects,
+        aspects: ftApiConfig.aspects,
         offset: 0,
         maxResults: 100,
       },
     };
 
     const apiResponse = await callAPI(
-      apiConfig.apiUrl,
+      ftApiConfig.apiUrl,
       body,
       headers,
-      apiConfig.method
+      ftApiConfig.method
     );
 
     // filter the result by extracting the articles only

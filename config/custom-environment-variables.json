@@ -2,7 +2,7 @@
   "app": {
     "port": "PORT"
   },
-  "apiConfig": {
+  "ftApiConfig": {
     "apiUrl": "API_URI",
     "apiKey": "API_KEY",
     "aspects": "ASPECTS",
