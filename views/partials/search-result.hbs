@@ -1,5 +1,8 @@
 {{#if data}}
 <div class="container teaser-container">
+    <div class="result-number-wrap">
+        <h2 class="result-number">Viewing results {{resultFrom}}-{{resultTo}} of {{totalResult}}</h2>
+    </div>
     <div class="teasers">
         <ul class="teaser-list">
             {{#each data}}
@@ -19,7 +22,8 @@
                             </p>
                             <div class="time-stamp">
                                 <time class="teaser-publish-date"
-                                    datetime={{this.lifecycle.lastPublishDateTime}}>{{formatDate this.lifecycle.lastPublishDateTime}}</time>
+                                    datetime={{this.lifecycle.lastPublishDateTime}}>{{formatDate
+                                    this.lifecycle.lastPublishDateTime}}</time>
                             </div>
                         </div>
                     </div>
@@ -29,5 +33,4 @@
         </ul>
     </div>
 </div>
-
 {{/if}}

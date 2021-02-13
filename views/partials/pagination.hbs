@@ -1,12 +1,15 @@
-<div>
-  <div>
-    <a href="?searchText={{textInput}}&page={{pageNumber}}"> previous page
+<div class="container">
+  <div class="pagination-wrap">
+    {{#if isPrevButtonVisible}}
+    <a class="prev-page-link page-link" href="?searchText={{textInput}}&page={{prevPageNumber}}">
     </a>
-    <div>
-      <p>page numbers</p>
+    {{/if}}
+    <div class="page-text">
+      <p>Page <strong>{{currentPage}}</strong> of {{totalPage}}</p>
     </div>
-    <a href="?searchText={{textInput}}&page={{pageNumber}}">
-      next page
+    {{#if isNextButtonVisible}}
+    <a class="next-page-link page-link" href="?searchText={{textInput}}&page={{nextPageNumber}}">
     </a>
+    {{/if}}
   </div>
 </div>

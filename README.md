@@ -26,4 +26,14 @@ Run following command
 ```
 
 ## Features completed
-TODO:
+- Be responsive - TODO:
+- Be accessible - No
+- Have pagination - Yes
+- Built using Javascript and node.js - Yes
+- Not be reliant on client-side frameworks (i.e. Angular, React) or libraries like jQuery - Yes
+- Uses Origami Components - No
+- Progressively enhanced - No
+- Deployed on Heroku - Yes
+- Have a similar look and feel as ft.com - Yes
+- Performs well over 3G networks - Yes
+- Works offline - No

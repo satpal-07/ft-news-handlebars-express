@@ -297,6 +297,20 @@ a {
   color: #33302e;
 }
 
+.result-number {
+  font-family: MetricWeb, sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 40px;
+  -webkit-font-smoothing: antialiased;
+  color: #33302e;
+}
+
 .teaser {
   display: flex;
   padding-bottom: 16px;
@@ -408,3 +422,43 @@ a {
 h2 {
   line-height: 1.5;
 }
+
+.prev-page-link {
+  background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-left?format=svg&source=next-search-page&tint=%230D7680%2C%230D7680);
+}
+
+.next-page-link {
+  background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?format=svg&source=next-search-page&tint=%230C707A%2C%230C707A);
+}
+
+.page-link {
+  padding: 11px 9px;
+  min-width: 36px;
+  background-position: 50%;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  border: 1px solid #0d7680;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.15s ease-out,
+    border-color 0.15s ease-out;
+  height: 40px;
+}
+
+.pagination-wrap {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.page-text {
+  color: #33302e;
+  margin: 0 1rem;
+  font-size: 14px;
+}
+
