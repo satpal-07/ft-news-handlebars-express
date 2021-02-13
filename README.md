@@ -26,7 +26,7 @@ Run following command
 ```
 
 ## Features completed
-- Be responsive - TODO:
+- Be responsive - Yes
 - Be accessible - No
 - Have pagination - Yes
 - Built using Javascript and node.js - Yes
