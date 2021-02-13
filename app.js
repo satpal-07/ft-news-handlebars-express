@@ -57,6 +57,7 @@ app.use(
   })
 );
 
+// set the default layout and handlebars extension
 app.engine(
   'hbs',
   handlebars({
@@ -68,6 +69,7 @@ app.engine(
   })
 );
 
+// set the view engine
 app.set('view engine', 'hbs');
 
 // Assign the routes

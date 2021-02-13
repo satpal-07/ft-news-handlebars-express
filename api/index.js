@@ -1,7 +1,15 @@
 'use strict';
 const axios = require('axios');
 
-const ftApi = async (
+/**
+ * Calls the given API and its params
+ * @param {String} url - url of the FT API
+ * @param {Object} body - Body of the API
+ * @param {Object} headers - API headers
+ * @param {String} method - API method type i.e. get, post ...
+ * @returns {Object} - data returned by the API
+ */
+const callAPI = async (
   url,
   body,
   headers,
@@ -18,6 +26,15 @@ const ftApi = async (
   }
 }
 
+/**
+ * Helper function to initialise the request parameters
+ * @param {String} url - url of the FT API
+ * @param {Object} body - Body of the API
+ * @param {Object} headers - API headers
+ * @param {string} [method='get']
+ * @param {string} [contentType='application/json']
+ * @returns {Object} - initialise Request parameters
+ */
 const initRequestParams = (url, body, headers, method='get', contentType = 'application/json') => {
   return {
     method: method,
@@ -33,5 +50,5 @@ const initRequestParams = (url, body, headers, method='get', contentType = 'appl
 
 
 module.exports = {
-  ftApi
+  callAPI
 }

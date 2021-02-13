@@ -1,3 +1,9 @@
+'use strict';
+/**
+ * Helper functions to format the provided date in en-US format
+ * @param {String} date - date
+ * @returns {String} - formatted date in en-US format
+ */
 const formatDate = (date) => {
   try {
     const dateObject = new Date(date);

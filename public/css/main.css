@@ -404,3 +404,7 @@ a {
 .home-link:hover {
   color: #736c67;
 }
+
+h2 {
+  line-height: 1.5;
+}

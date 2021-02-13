@@ -1,13 +1,21 @@
 'use strict';
 const apiConfig = require('config').apiConfig;
-const apiRequest = require('../api/ft');
+const { callAPI } = require('../api');
 const endpointName = '/search';
 const aspects = 'article';
 
+/**
+ * endpoint to handle to search
+ * @param {*} req - express request object
+ * @param {*} res - express response object
+ * @param {*} next - express next object
+ */
 const endpoint = async (req, res, next) => {
+  // get the search query
   const { searchText } = req.query;
   try {
     console.debug(`search text: ${searchText}`);
+    // set up the FT API params
     const headers = {
       'X-Api-Key': apiConfig.apiKey,
     };
@@ -20,13 +28,14 @@ const endpoint = async (req, res, next) => {
       },
     };
 
-    const apiResponse = await apiRequest.ftApi(
+    const apiResponse = await callAPI(
       apiConfig.apiUrl,
       body,
       headers,
       apiConfig.method
     );
-    console.debug(`API response...`);
+
+    // filter the result by extracting the articles only
     const filteredData = filter(apiResponse.results[0].results, 'article');
     res.render('seach-page', {
       data: filteredData,
@@ -41,6 +50,12 @@ const endpoint = async (req, res, next) => {
   }
 };
 
+/**
+ * Filters the given data using the field
+ * @param {Array} data - data to be filtered
+ * @param {String} field - field to be used to filter
+ * @returns {Array} filtered data
+ */
 const filter = (data, field) => {
   if (!data || !Array.isArray(data)) return [];
   try {
@@ -52,6 +67,12 @@ const filter = (data, field) => {
   }
 };
 
+/**
+ * Checks if the result is empty and returns true if empty else false
+ *
+ * @param {Array} result - result to be checked
+ * @returns {Boolean} - true if result is empty else false
+ */
 const isResultEmpty = (result) => {
   if (!result || !Array.isArray(result) || result.length === 0) return true;
   return false;
