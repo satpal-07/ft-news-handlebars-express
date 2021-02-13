@@ -1,0 +1,22 @@
+{
+  "name": "ft-news",
+  "version": "1.0.0",
+  "description": "Website to use FT API using Handlebars and express",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV='dev' && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Satpal Singh",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-joi-validation": "^5.0.0",
+    "helmet": "^4.4.1",
+    "morgan": "^1.10.0"
+  }
+}

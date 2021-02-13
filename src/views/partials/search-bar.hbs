@@ -1,0 +1,11 @@
+<div id="search-bar" class="search-wrap" style="display: none;">
+  <div class="search-box">
+    <form class="search-form" action="/search" method="get" role="form">
+      <input id="search-primary" type="text" class="search-input" name="searchText" placeholder="Search the FT" required value={{textInput}}>
+      <button type="submit" class="search-button no-outline">
+        Search
+      </button>
+      <button class="search-close o--if-js no-outline" onclick="toggleSearchBar()" type="button" aria-controls="search-primary" title="Close search bar" data-trackable="close" data-o-toggle--js="true" aria-expanded="true"><span class="visually-hidden">Close search bar</span></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{{#if data}}
+<div class="container teaser-container">
+    <div class="teasers">
+        <ul class="teaser-list">
+            {{#each data}}
+            <li class="teaser-item">
+                <div class="teaser">
+                    {{#if this.images.0.url}}
+                    <div class="image-container">
+                        <img src="{{this.images.0.url}}" class="teaser-image" alt="" data-o-lazy-load="true">
+                    </div>
+                    {{/if}}
+                    <div class="teaser-box">
+                        <a href="{{this.location.uri}}" class="teaser-head-link" rel='noreferrer noopener'
+                            target="_blank">{{this.title.title}}</a>
+                        <div class="teaser-body">
+                            <p class="teaser-item">
+                                {{this.summary.excerpt}}
+                            </p>
+                            <div class="time-stamp">
+                                <time class="teaser-publish-date"
+                                    datetime={{this.lifecycle.lastPublishDateTime}}>{{formatDate this.lifecycle.lastPublishDateTime}}</time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+{{/if}}

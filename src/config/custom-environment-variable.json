@@ -1,0 +1,11 @@
+{
+  "app": {
+    "port": "PORT_NUMBER"
+  },
+  "apiConfig": {
+    "apiUrl": "API_URI",
+    "apiKey": "API_KEY",
+    "aspects": "ASPECTS",
+    "method":"METHOD"
+  }
+}
