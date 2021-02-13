@@ -387,6 +387,12 @@ a {
   width: 100%;
 }
 
+.main-search-input:focus {
+  box-shadow: 0 0 0 2px #807973;
+  outline: none;
+  border-color: #807973;
+}
+
 .main-search-button {
   background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:search?format=svg&source=next-search-page&tint=%23FFFFFF%2C%23FFFFFF);
   padding-left: 0;
