@@ -1,50 +1,47 @@
 <nav id="nav-bar" class="row nav nav-bar" role="navigation" aria-label="Primary navigation">
   <div class="container nav-container">
     <ul class="nav-list nav-list-left">
-      {{#if isNavActive}}
       <li class="nav-item">
-        <a class="nav-link nav-link-primary nav-link-active" onclick="makeActive(this)" href="/">Home</a>
-      </li>
-      {{else}}
-      <li class="nav-item">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Home</a>
-      </li>
-      {{/if}}
-      <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">World</a>
-      </li>
-      <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">UK</a>
-      </li>
-      <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Companies</a>
-      </li>
-      <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Tech</a>
+        <a class="nav-link nav-link-primary {{#if isHomeActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Markets</a>
+        <a class="nav-link nav-link-primary {{#if isSearchLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?activeLink=search">Search</a>
       </li>
       <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Climate</a>
+        <a class="nav-link nav-link-primary {{#if isBrexitLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?searchText=brexit&activeLink=brexit">Brexit</a>
       </li>
       <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Opinion</a>
+        <a class="nav-link nav-link-primary {{#if isEuropeLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?searchText=Europe&activeLink=eu">Europe</a>
       </li>
       <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#"
-          data-trackable="Work &amp; Careers">Work &amp;
-          Careers</a>
+        <a class="nav-link nav-link-primary {{#if isTechnologyLinkActive}}nav-link-active{{/if}}"
+          onclick="makeActive(this)" href="/search?searchText=technology&activeLink=tech">Technology</a>
       </li>
       <li class="nav-item hide">
-        <a class="nav-link nav-link-primary" onclick="makeActive(this)" href="/#">Life &amp; Arts</a>
+        <a class="nav-link nav-link-primary {{#if isCovidLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?searchText=covid&activeLink=covid">Covid</a>
       </li>
-      <li class="nav-item hide"><a class="nav-link nav-link-primary" href="/#">How to Spend It</a></li>
+      <li class="nav-item hide">
+        <a class="nav-link nav-link-primary {{#if isCryptoLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?searchText=crypto%20currency&activeLink=crypto">Crypto Currency</a>
+      </li>
+      <li class="nav-item hide">
+        <a class="nav-link nav-link-primary {{#if isAsiaLinkActive}}nav-link-active{{/if}}" onclick="makeActive(this)"
+          href="/search?searchText=asia&activeLink=asia" data-trackable="Work &amp; Careers">Asia</a>
+      </li>
+      <li class="nav-item hide">
+        <a class="nav-link nav-link-primary {{#if isScienceLinkActive}}nav-link-active{{/if}}"
+          onclick="makeActive(this)" href="/search?searchText=science&activeLink=science">Science</a>
+      </li>
     </ul>
     <ul class="nav-list nav-list-right">
-      <li class="nav-item hide"><a class="nav-link" onclick="makeActive(this)" href="/#">Portfolio</a>
+      <li class="nav-item hide"><a class="nav-link" onclick="makeActive(this)" href="/#">Right Nav 1</a>
       </li>
-      <li class="nav-item hide"><a class="nav-link"href="/#" onclick="makeActive(this)">Settings &amp; Account</a>
+      <li class="nav-item hide"><a class="nav-link" href="/#" onclick="makeActive(this)">Right Nav 2</a>
       </li>
     </ul>
   </div>

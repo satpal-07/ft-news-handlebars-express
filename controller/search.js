@@ -12,7 +12,7 @@ const maxResults = 25;
  */
 const endpoint = async (req, res, next) => {
   // get the search query
-  const { searchText, page = 1 } = req.query;
+  const { searchText, page = 1, activeLink } = req.query;
   try {
     const pageNum = Number(page);
     console.debug(`search text: ${searchText}`);
@@ -52,6 +52,8 @@ const endpoint = async (req, res, next) => {
     const resultFrom = calculateResultFrom(offset);
     const resultTo = calculateResultTo(offset);
 
+    const activeNavLink = getActiveNavLink(activeLink);
+
     res.render('seach-page', {
       data: articleResult,
       textInput: searchText,
@@ -65,6 +67,7 @@ const endpoint = async (req, res, next) => {
       totalResult,
       resultFrom,
       resultTo,
+      ...activeNavLink,
     });
   } catch (error) {
     console.error(`Error in search controller: ${error.message}`);
@@ -114,7 +117,7 @@ const getPrevPageNumber = (pageNum) => {
   return pageNum < 0 ? 1 : pageNum - 1;
 };
 
-/** 
+/**
  * Calculates the result from number
  * @param {Number} offset - API offset
  * @returns {Number} - result from number
@@ -164,6 +167,24 @@ const getResult = (apiResponse) => {
 const isResultEmpty = (result) => {
   if (!result || !Array.isArray(result) || result.length === 0) return true;
   return false;
+};
+
+/**
+ * Responsible for identifying which nav link to show as active
+ * @param {String} item - nav link to be made active
+ * @returns {Object} - list of boolean
+ */
+const getActiveNavLink = (item) => {
+  return {
+    isSearchLinkActive: item === 'search' ? true : false,
+    isBrexitLinkActive: item === 'brexit' ? true : false,
+    isEuropeLinkActive: item === 'eu' ? true : false,
+    isTechnologyLinkActive: item === 'tech' ? true : false,
+    isCovidLinkActive: item === 'covid' ? true : false,
+    isCryptoLinkActive: item === 'crypto' ? true : false,
+    isAsiaLinkActive: item === 'asia' ? true : false,
+    isScienceLinkActive: item === 'science' ? true : false,
+  };
 };
 
 module.exports = { endpoint, endpointName };
