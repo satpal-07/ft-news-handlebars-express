@@ -25,6 +25,8 @@ Run following command
     npm start
 ```
 
+Once, app is running access it on http://localhost:5000/
+
 ## Features completed
 - Be responsive - Yes
 - Be accessible - No
