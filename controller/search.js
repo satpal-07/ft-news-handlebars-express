@@ -175,8 +175,7 @@ const isResultEmpty = (result) => {
  * @returns {Object} - list of boolean
  */
 const getActiveNavLink = (item) => {
-  return {
-    isSearchLinkActive: item === 'search' ? true : false,
+  const activeNavLink = {
     isBrexitLinkActive: item === 'brexit' ? true : false,
     isEuropeLinkActive: item === 'eu' ? true : false,
     isTechnologyLinkActive: item === 'tech' ? true : false,
@@ -185,6 +184,16 @@ const getActiveNavLink = (item) => {
     isAsiaLinkActive: item === 'asia' ? true : false,
     isScienceLinkActive: item === 'science' ? true : false,
   };
+  let isSearchLinkActive = true;
+  // if none of the links are active then make search active
+  for(const link of Object.values(activeNavLink)) {
+    if(link){
+      isSearchLinkActive = false;
+      break;
+    }
+  }
+  activeNavLink.isSearchLinkActive = isSearchLinkActive;
+  return activeNavLink;
 };
 
 module.exports = { endpoint, endpointName };

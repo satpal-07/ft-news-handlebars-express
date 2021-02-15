@@ -48,6 +48,11 @@
 .top-column-right {
   text-align: right;
   width: 12.5%;
+  height: 60px;
+}
+
+.my-word {
+  font-weight: 100;
 }
 
 .top-column-center {
@@ -73,19 +78,6 @@ button:not(:disabled) {
 
 .top-link {
   vertical-align: middle;
-}
-
-.top-link-my-ft:before {
-  background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-myft?format=svg&source=page-kit-layout&tint=%2333302E%2C%2333302E);
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50%;
-  background-color: transparent;
-  vertical-align: inherit;
-  content: ' ';
-  width: 50px;
-  height: 50px;
 }
 
 .top-link-search:before {
@@ -253,9 +245,6 @@ a {
   font-size: 11px;
   line-height: 20px;
   word-spacing: 0;
-}
-
-.nav-list-right {
 }
 
 .nav-list-left {
