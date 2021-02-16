@@ -171,29 +171,55 @@ const isResultEmpty = (result) => {
 
 /**
  * Responsible for identifying which nav link to show as active
- * @param {String} item - nav link to be made active
+ * @param {String} searchWord - nav link to be made active
  * @returns {Object} - list of boolean
  */
-const getActiveNavLink = (item) => {
-  const activeNavLink = {
-    isBrexitLinkActive: item === 'brexit' ? true : false,
-    isEuropeLinkActive: item === 'eu' ? true : false,
-    isTechnologyLinkActive: item === 'tech' ? true : false,
-    isCovidLinkActive: item === 'covid' ? true : false,
-    isCryptoLinkActive: item === 'crypto' ? true : false,
-    isAsiaLinkActive: item === 'asia' ? true : false,
-    isScienceLinkActive: item === 'science' ? true : false,
-  };
-  let isSearchLinkActive = true;
-  // if none of the links are active then make search active
-  for(const link of Object.values(activeNavLink)) {
-    if(link){
-      isSearchLinkActive = false;
+const getActiveNavLink = (searchWord) => {
+  const activeNavLink = createNavObject();
+  switch (searchWord) {
+    case 'brexit':
+      activeNavLink.isBrexitLinkActive = true;
       break;
-    }
+    case 'eu':
+      activeNavLink.isEuropeLinkActive = true;
+      break;
+    case 'tech':
+      activeNavLink.isTechnologyLinkActive = true;
+      break;
+    case 'covid':
+      activeNavLink.isCovidLinkActive = true;
+      break;
+    case 'crypto':
+      activeNavLink.isCryptoLinkActive = true;
+      break;
+    case 'asia':
+      activeNavLink.isAsiaLinkActive = true;
+      break;
+    case 'science':
+      activeNavLink.isScienceLinkActive = true;
+      break;
+    default:
+      activeNavLink.isSearchLinkActive = true;
+      break;
   }
-  activeNavLink.isSearchLinkActive = isSearchLinkActive;
   return activeNavLink;
+};
+
+/**
+ * Creates Active Nav item checker object with false values by default
+ * @returns {Object} Active Nav item checker object
+ */
+const createNavObject = () => {
+  return {
+    isBrexitLinkActive: false,
+    isEuropeLinkActive: false,
+    isTechnologyLinkActive: false,
+    isCovidLinkActive: false,
+    isCryptoLinkActive: false,
+    isAsiaLinkActive: false,
+    isScienceLinkActive: false,
+    isSearchLinkActive: false,
+  };
 };
 
 module.exports = { endpoint, endpointName };
